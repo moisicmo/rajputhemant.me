@@ -25,7 +25,7 @@ const ThemeToggle = ({ className }: Props) => {
       aria-label="Toggle Theme"
       onClick={toggleTheme}
       className={cn(
-        "h-10 w-10 rounded-full border border-border p-2 transition-transform duration-300 dark:text-green-300",
+        "size-10 rounded-full border border-border p-2 transition-transform duration-300 dark:text-green-300",
         isMounted() && (currentTheme === "light" ? "-rotate-180" : "rotate-0"),
         className
       )}

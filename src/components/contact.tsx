@@ -32,9 +32,9 @@ export default function Contact() {
             <MailOpen />
 
             {isCopied ? (
-              <ClipboardCheck className="-my-3 -mr-2 h-6 w-6" />
+              <ClipboardCheck className="-my-3 -mr-2 size-6" />
             ) : (
-              <Clipboard className="-my-3 -mr-2 h-6 w-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <Clipboard className="-my-3 -mr-2 size-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             )}
           </div>
 

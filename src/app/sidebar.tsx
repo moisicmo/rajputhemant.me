@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Link, Mail } from "lucide-react";
+import { Download, Link, Mail, Phone } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { useToast } from "@/components/ui/use-toast";
@@ -41,11 +41,10 @@ const AboutSidebar = () => {
               target="_blank"
               className="flex basis-[90%] items-center justify-center gap-x-2 rounded-md border bg-secondary/50 py-2 text-center text-lg font-semibold"
             >
-              View Resume <Link className="h-4 w-4" />
+              View Resume <Link className="size-4" />
             </a>
 
             <a
-              // href="#"
               title="Download Resume"
               onClick={() => {
                 toast({
@@ -58,7 +57,7 @@ const AboutSidebar = () => {
             >
               <Download
                 aria-label="Download Resume"
-                className="h-5 w-5 text-green-600 dark:text-green-300"
+                className="size-5 text-green-600 dark:text-green-300"
               />
             </a>
           </div>
@@ -67,8 +66,15 @@ const AboutSidebar = () => {
             href={`mailto:${siteConfig.author.mail}`}
             className="hover:text-primary-color flex items-center justify-center gap-x-2 text-green-600 dark:text-green-300/75"
           >
-            <Mail className="h-5 w-5" />
+            <Mail className="size-5" />
             {siteConfig.author.mail}
+          </a>
+          <a
+            href={`tel:${siteConfig.author.phone}`}
+            className="hover:text-primary-color flex items-center justify-center gap-x-2 text-green-600 dark:text-green-300/75"
+          >
+            <Phone className="size-5" />
+            {siteConfig.author.phone}
           </a>
         </div>
       </div>

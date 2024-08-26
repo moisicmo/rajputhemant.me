@@ -3,24 +3,23 @@ import Image from "next/image";
 import { jobs } from "@/config/constants";
 import { siteConfig } from "@/config/site";
 import { Icons } from "@/components/icons";
+import AboutSidebar from "./sidebar";
 
 const PortfolioPage = () => {
   return (
     <main className="mx-auto max-w-7xl px-6 md:px-16">
       {/* hero */}
-      <section className="flex flex-col items-start justify-between gap-x-12 xl:flex-row xl:items-center xl:justify-center">
-        <div className="max-w-2xl duration-700 animate-in slide-in-from-top-full lg:max-w-2xl">
-          <h1 className="mb-6 min-w-full text-3xl font-black leading-tight tracking-tight sm:text-5xl lg:min-w-[700px] lg:leading-[3.7rem]">
-            Software engineer & <br />
-            open-source enthusiast.
+      <section className="relative grid grid-cols-1 justify-items-center gap-x-6 lg:grid-cols-2">
+        <div className="order-2 duration-700 animate-in slide-in-from-top-full lg:order-none">
+          <h1 className="mb-8 basis-1/2 text-3xl font-black tracking-tight sm:text-5xl lg:leading-tight">
+            I&apos;m {siteConfig.author.name}. I live in La Paz Bolivia, where I
+            build the future.
           </h1>
 
-          <p className="text-base leading-relaxed text-foreground/60">
-            I&apos;m {siteConfig.author.name}, an experienced frontend developer
-            passionate about learning and building open-source software that is
-            beneficial to developers and the world at large.
+          <p className="sm:text-1.5xl text-base leading-relaxed text-foreground/90">
+            I&apos;m, a Software Engineer focused on frontend, backend and
+            mobile development. Passionate about continuous learning. 😁
           </p>
-
           {/* socials */}
           <ul className="my-10 flex flex-wrap items-center gap-x-5 gap-y-4 duration-700 animate-in slide-in-from-bottom-full">
             {Object.values(siteConfig.links).map(
@@ -33,7 +32,7 @@ const PortfolioPage = () => {
                     className="group flex items-center border-b border-border"
                   >
                     <Icon
-                      className="h-4 w-4 shrink-0 text-foreground/60 duration-300 group-hover:text-foreground"
+                      className="size-4 shrink-0 text-foreground/60 duration-300 group-hover:text-foreground"
                       aria-hidden="true"
                     />
                     &nbsp;
@@ -44,8 +43,7 @@ const PortfolioPage = () => {
             )}
           </ul>
         </div>
-
-        <Icons.Hero className="h-full w-full duration-700 animate-in slide-in-from-bottom-1/3 lg:h-[450px] lg:w-[450px]" />
+        <AboutSidebar />
       </section>
 
       {/* work */}
@@ -60,7 +58,7 @@ const PortfolioPage = () => {
           {jobs.map((data, i) => (
             <div
               key={i}
-              className="relative flex max-w-2xl items-start gap-x-4 before:absolute before:bottom-0 before:left-9 before:top-[5rem] before:h-[calc(100%-70px)] before:w-[1px] before:bg-muted lg:gap-x-6"
+              className="relative flex max-w-2xl items-start gap-x-4 before:absolute before:bottom-0 before:left-9 before:top-20 before:h-[calc(100%-70px)] before:w-px before:bg-muted lg:gap-x-6"
             >
               <a
                 href={data.url}

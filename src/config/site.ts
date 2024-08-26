@@ -1,16 +1,17 @@
 import { Icons } from "@/components/icons";
 
 export const siteConfig = {
-  name: "Hemant Rajput | Software Developer",
+  name: "Moises Ochoa | Software Engineer",
   description:
-    "Hemant Rajput is a Software Developer who is passionate about building solutions and contributing to open source communities",
+    "Moises Ochoa is a Software Engineer who is passionate about building solutions",
   url: "https://rajputhemant.me",
 
   author: {
-    name: "Hemant Rajput",
+    name: "Moises Ochoa",
     avatar: "/images/avatar.png",
-    bio: "Software Developer",
-    mail: "rajput.hemant2001@gmail.com",
+    bio: "Software Engineer",
+    mail: "moisic.mo@gmail.com",
+    phone: "+591 73735766",
     description:
       "Seasoned software engineer especially in frontend side, with a passion for creating pixel-perfect web experiences.",
   },
@@ -18,13 +19,13 @@ export const siteConfig = {
   links: {
     github: {
       title: "Github",
-      href: "https://github.com/rajput-hemant",
+      href: "https://github.com/moisicmo",
       icon: Icons.Github,
     },
 
     linkedin: {
       title: "Linkedin",
-      href: "https://www.linkedin.com/in/rajput-hemant",
+      href: "www.linkedin.com/in/moses-ochoa",
       icon: Icons.LinkedIn,
     },
 

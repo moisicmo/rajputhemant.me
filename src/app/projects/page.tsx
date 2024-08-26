@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Eye } from "lucide-react";
 
-import { projects } from "@/config/constants";
+import { projects, tools } from "@/config/constants";
 import { siteConfig } from "@/config/site";
 import { shuffle } from "@/lib/utils";
 
@@ -47,7 +47,7 @@ export default function Projects() {
                 width={60}
                 height={60}
                 alt={name}
-                className="h-16 w-16 rounded-md bg-foreground/5 object-contain p-2 duration-300 group-hover:bg-foreground/10"
+                className="size-16 rounded-md bg-foreground/5 object-contain p-2 duration-300 group-hover:bg-foreground/10"
               />
 
               <div className="duration-1000 animate-in slide-in-from-bottom-full">
@@ -60,7 +60,7 @@ export default function Projects() {
                       target="_blank"
                       className="z-10 my-auto -mt-1 rounded-md border border-transparent p-1 text-foreground/50 duration-300 hover:border-border hover:text-foreground"
                     >
-                      <Eye className="h-5 w-5" />
+                      <Eye className="size-5" />
                     </a>
                   )}
                 </div>
@@ -72,6 +72,42 @@ export default function Projects() {
             </a>
           )
         )}
+      </section>
+      {/* Usage  */}
+      <section className="mt-10 max-w-2xl">
+        <div className="mb-8">
+          <h2 className="mb-4 text-4xl font-bold tracking-tight">Usage</h2>
+
+          <p className="max-w-xl text-foreground/60">
+            Tools, technologies and gadgets I use on a daily basis but not
+            limited to.
+          </p>
+        </div>
+
+        {tools.map(({ heading, items }, i) => (
+          <div key={i} className="my-4">
+            <h3 className="text-2xl font-semibold">{heading}</h3>
+
+            {items.map(({ name, url, description, icon: Icon }, i) => (
+              <li key={i} className="flex items-center gap-x-2 p-2">
+                <Icon className="size-5 min-h-fit min-w-fit" />
+                <a
+                  href={url}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  aria-label={name}
+                  className="my-auto min-w-fit leading-3 text-blue-500 underline underline-offset-4 duration-500 animate-in zoom-in-50 hover:underline dark:text-blue-400"
+                >
+                  {name}
+                </a>
+                -
+                <span className="truncate text-foreground/60 duration-500 animate-in zoom-in-50">
+                  {description}
+                </span>
+              </li>
+            ))}
+          </div>
+        ))}
       </section>
     </main>
   );

@@ -12,7 +12,7 @@ const Footer = ({ className }: Props) => {
         className
       )}
     >
-      <div>© {new Date().getFullYear()} by rajput-hemant@github</div>
+      <div>© {new Date().getFullYear()}</div>
     </div>
   );
 };
